@@ -62,6 +62,8 @@ function Expression
 4. Why is a function call an expression in JavaScript?
 
 // Ans - To execute the function ,we call the function.
+// because always give the value .
+   
 
 5. Write VALID and INVALID next to each example below with the reason.
 
@@ -70,9 +72,9 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // Valid
-five = add; // Invalid
-five = five(10, 11); // Invalid
+let five = add(2, 3); // Valid 5
+five = add; // Valid
+five = five(10, 11); // valid 21
 five = function () {
   return 'Hello';
 }; // Valid
@@ -86,6 +88,8 @@ five = function () {
 // percentage(); this is function call.
 
 7. What is the similarities between function definition and function call?
+// Function defination is an expression.(function is an object)
+// function call is an expression (function call always  returns a value)
 
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -103,8 +107,10 @@ hello.user = 'Sam'; // valid
    number.map(double);
 
   Ans - function either accept callback function as a parameter or return the function are called higher order function.
-
+       thats accepts a function defination.
+       thats return  a  function defination.
 
 10. Explain what is callback function. Why you can pass a function inside a function?
 
 ANs - a callback function is a function pass as an arugument to another function. 
+    Because function is an expression in js we can pass a function inside another function.
