@@ -25,9 +25,28 @@ let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 3. Write a higher order function that accepts a number and a operation function (callback function). Call the callback function passing the number as argument and return the returned value.
 
 ```js
-function operation(n, opFn) {
   // your code goes her
-}
+  function divideBy10(n) {
+      return n/10;
+  }
+      function devideBy5(n) {
+      return (n*n)/5;
+      }
+function operation(n, opFn) {
+  if(opFn(n)) {
+  return divideBy10(n);
+    }
+     
+  }   
+function operation(n, opFn) {
+  if(opFn(n)) {
+  return devideBy5(n);
+    }
+     
+  }       
+
+ operation(20 ,divideBy10);
+ operation(20 ,devideBy5);
 // TEST
 console.log(
   operation(21, function (n) {
