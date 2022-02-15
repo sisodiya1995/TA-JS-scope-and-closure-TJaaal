@@ -1,6 +1,13 @@
 1. Create a function by your choice that accepts a callback function.
+   let number = [1,3,4,5,6]
+   number.map((item) => item *2);
 
 2. Create a function by you choice that returns a function reference.
+     function add(n){
+       return function(n){
+          return n/2;
+       } 
+     }
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -10,7 +17,13 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
-
+ function map(arr ,cb){
+   let finalAry = [];
+    for(let ele of arr){
+       finalAry.push(cb(ele)));
+    }
+  return finalAry;
+}
 // Test Your Code
 function multiplyByTwo(n) {
   return n * 2;
@@ -24,6 +37,13 @@ multiplyByTwo(2); //-> 4
 
 ```js
 // Your code goes here
+  function forEach(arr ,cb){
+    let alphabet = "";
+    for(let ele of arr){
+         cb(ele);
+    }
+  return alphabet;
+  }
 
 // Test Your Code
 let alphabet = '';
@@ -38,6 +58,15 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
+function filter(arr , cb){
+      let finalAry =[];
+      for(let ele of arr){
+        if(cb(ele))
+           finalAry.push(ele);
+      }
+      return finalAry;
+}
+
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
