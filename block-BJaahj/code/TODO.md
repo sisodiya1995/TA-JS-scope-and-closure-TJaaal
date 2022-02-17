@@ -8,8 +8,10 @@ function objOfMatches(array1, array2, callback) {
         for(let elm of array1){
 
            for(let elm1 of array2){
-
-             finalObj[elm] = callback(elm);
+              if(elm1 === callback(elm)){
+                 finalObj[elm] = callback(elm);
+              }
+            
            }
 
         }
@@ -170,6 +172,20 @@ Create a function named `schedule` which accept two arguments an array of functi
 The function `schedule` will execute the function at first index after the value in value on first index in second array. i.e execute `sayHi` after `1` second and `sayHello` after `2` second.
 
 ```js
+function schedule(callbacks , allTimes) {
+  if(callbacks.length !== allTimes.length){
+    alert('length are not same')
+  }
+  callbacks.forEach((fn , i) =>{
+
+    setTimeout(fn , allTimes[i]*1000)
+  })
+
+}
+
+
+
+
 function schedule() {}
 
 function sayHi() {
