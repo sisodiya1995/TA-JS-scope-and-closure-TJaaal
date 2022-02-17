@@ -10,8 +10,11 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(start ,test , update ,body) {
   // Your code goes here
+  for(let i = start; test(i); i = update(i)){
+       body(i);
+  }
 }
 
 loop(
@@ -55,6 +58,16 @@ function intersection(arr1 ,arr2, arr3) {
      return final;
 }
 
+function intersection (...arrays){
+  // comapare two afrrays
+  let first = arrays[0];
+  for(let i= 1; i < arrays.length ; i++){
+    let second =arrays[i];
+     first = first.filter((elm)=>second.includes(elm) );
+  }
+  return first;
+}
+
 // Test
 console.log(
   intersection(
@@ -77,6 +90,18 @@ function union(arr,arr1,arr2) {
             index) => finalArr.indexOf(item) === index);
 
 }
+
+function union(...arrays) {
+    let first = arrays[0];
+  for(let i= 1; i < arrays.length ; i++){
+    let second =arrays[i];
+     first = first.filter((elm)=>! second.includes(elm) ).concat(second);
+  }
+  return first;  
+   
+}
+
+
 
 // Test
 console.log(
